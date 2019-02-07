@@ -69,7 +69,7 @@ public class SMSView extends JFrame{
 		try {
 			doc.insertString(doc.getLength(), newSMS.toString()+newLine, smsStyle);
 		} catch (BadLocationException e) {
-			// TODO Auto-generated catch block
+	
 			e.printStackTrace();
 		}
 	}

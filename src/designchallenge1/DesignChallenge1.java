@@ -21,7 +21,9 @@ public class DesignChallenge1 {
         SMSView smsApp = new SMSView();
         FBView fbApp = new FBView();
         
-        String JoshDaddy; 
+        String JoshDaddy = "2/7/2019,Josh Day, Red";
+
+        
         
     }
 }

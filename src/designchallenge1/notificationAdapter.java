@@ -1,20 +1,24 @@
 package designchallenge1;
-import sms.SMSView;
+import sms.SMS;
 import facebook.FBView;
 
 public class notificationAdapter implements notificationCenter{
 	
-	SMSView sms;
+	SMS sms;
 	FBView fb;
 	
-	public notificationAdapter(SMSView textPhone, FBView messageFacebook) {
+	
+	
+	
+	public notificationAdapter(SMS textPhone, FBView messageFacebook) {
 		sms = textPhone;
 		fb = messageFacebook;
+		
 	}
 	
 	@Override
 	public void getYear() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -32,13 +36,14 @@ public class notificationAdapter implements notificationCenter{
 
 	@Override
 	public void getTitle() {
-		// TODO Auto-generated method stub
+		sms.getEventName();
 		
 	}
 
 	@Override
 	public void labelColor() {
-		// TODO Auto-generated method stub
+		
+		sms.getColor();
 		
 	}
 	
