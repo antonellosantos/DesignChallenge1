@@ -31,20 +31,7 @@ public class notificationAdapter implements notificationCenter{
 //	}
 //	
 	@Override
-	public void getYear() {
-		
-		
-	}
-
-	@Override
-	public void getMonth() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getDay() {
-		// TODO Auto-generated method stub
+	public void getDate() {
 		
 	}
 

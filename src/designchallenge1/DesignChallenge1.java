@@ -20,7 +20,6 @@ public class DesignChallenge1 {
         CalendarProgram cp = new CalendarProgram();
         SMSView smsApp = new SMSView();
         FBView fbApp = new FBView();
-        fuckRaf Nello = new fuckRaf();
         
         
     	String date = "2/8/2019";
