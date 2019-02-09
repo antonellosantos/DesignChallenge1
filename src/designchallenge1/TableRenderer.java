@@ -10,9 +10,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
- *
- * @author Arturo III
- */
+*
+* @author Rafael Cruz and Antonello Santos 
+*/
 public class TableRenderer extends DefaultTableCellRenderer
 {
     public Component getTableCellRendererComponent (JTable table, Object value, boolean selected, boolean focused, int row, int column)
