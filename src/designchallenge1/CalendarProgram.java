@@ -6,7 +6,7 @@ package designchallenge1;
 
 /**
  *
- * @author Arturo III
+ * @author Rafael Cruz and Antonello Santos 
  */
 
 import javax.swing.*;
@@ -23,7 +23,7 @@ public class CalendarProgram{
 
         /**** Swing Components ****/
         public JLabel monthLabel, yearLabel;
-	public JButton btnPrev, btnNext;
+	public JButton btnPrev, btnNext, addEvent;
         public JComboBox cmbYear;
 	public JFrame frmMain;
 	public Container pane;
@@ -114,6 +114,13 @@ public class CalendarProgram{
 		btnNext.addActionListener(new btnNext_Action());
 		cmbYear.addActionListener(new cmbYear_Action());
 		
+		addEvent = new JButton("Add Event");
+		addEvent.setBounds(107, 619, 89, 23);
+		calendarPanel.add(addEvent);
+		modelCalendarTable.setColumnCount(7);
+		modelCalendarTable.setRowCount(6);
+		//addEvent.addActionListener(new addEvent_Action());
+		
 		pane.add(calendarPanel);
 		calendarPanel.add(monthLabel);
 		calendarPanel.add(yearLabel);
@@ -155,8 +162,8 @@ public class CalendarProgram{
 		calendarTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		calendarTable.setRowHeight(76);
-		modelCalendarTable.setColumnCount(7);
-		modelCalendarTable.setRowCount(6);
+		
+		
 		
 		for (int i = yearBound-100; i <= yearBound+100; i++)
                 {
@@ -211,4 +218,12 @@ public class CalendarProgram{
 			}
 		}
 	}
+//	class addEvent_Action implements ActionListener
+//		{
+//		public void actionPerformed (ActionEvent e)
+//				{
+//			AddEvent event = new AddEvent();
+//			event.setVisible(false);
+//				}
+//			}
 }
