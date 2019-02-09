@@ -74,7 +74,7 @@ public class AddEvent extends JFrame {
 		yearDate.setBounds(333, 181, 110, 33);
 		panel.add(yearDate);
 		for(int year=1;year<=12;year++){
-	        monthDate.addItem(year);
+	        yearDate.addItem(year);
 		}
 		
 		JLabel labelColor = new JLabel("Label");
