@@ -5,7 +5,7 @@ import java.io.*;
 public class FileParserCSV extends FileParser{
 
 	//@Override
-	public void readData() {
+	public void readFile() {
 		String filename ="src\\Sample Files\\DLSU Unicalendar.psv";
 		File file = new File(filename);
 		try {
@@ -39,6 +39,10 @@ public class FileParserCSV extends FileParser{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void writeFile() {
+		
 	}
 
 }

@@ -7,10 +7,10 @@ public abstract class FileParser {
 	protected ArrayList<String[]> linesinFile = new ArrayList<String[]>();	
 	
 	public void parsing() {
-		readData();
+		readFile();
 		
 	}
 	
-	public abstract void readData();
+	public abstract void readFile();
 
 }
