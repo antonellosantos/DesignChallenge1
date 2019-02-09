@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JButton;
 
 public class addingEvent extends JFrame {
 
@@ -79,5 +80,13 @@ public class addingEvent extends JFrame {
 		choosingColor.setMaximumRowCount(31);
 		choosingColor.setBounds(27, 262, 110, 33);
 		panel.add(choosingColor);
+		choosingColor.addItem("Red");
+		choosingColor.addItem("Green");
+		choosingColor.addItem("Yellow");
+		choosingColor.addItem("Blue");
+		
+		JButton finishButton = new JButton("Done!");
+		finishButton.setBounds(371, 332, 89, 23);
+		panel.add(finishButton);
 	}
 }
