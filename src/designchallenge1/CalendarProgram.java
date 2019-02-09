@@ -119,7 +119,7 @@ public class CalendarProgram{
 		calendarPanel.add(addEvent);
 		modelCalendarTable.setColumnCount(7);
 		modelCalendarTable.setRowCount(6);
-		addEvent.addActionListener(new addEvent_Action());
+		//addEvent.addActionListener(new addEvent_Action());
 		
 		pane.add(calendarPanel);
 		calendarPanel.add(monthLabel);
@@ -218,12 +218,12 @@ public class CalendarProgram{
 			}
 		}
 	}
-	class addEvent_Action implements ActionListener
-		{
-		public void actionPerformed (ActionEvent e)
-				{
-			AddEvent event = new AddEvent();
-			event.setVisible(false);
-				}
-			}
+//	class addEvent_Action implements ActionListener
+//		{
+//		public void actionPerformed (ActionEvent e)
+//				{
+//			AddEvent event = new AddEvent();
+//			event.setVisible(false);
+//				}
+//			}
 }
