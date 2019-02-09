@@ -197,6 +197,7 @@ public class CalendarProgram{
     {
 		AddEvent event = new AddEvent();
 		event.setVisible(true);
+		refreshCalendar(monthToday, yearToday);
 	}
 }
 	class btnNext_Action implements ActionListener
