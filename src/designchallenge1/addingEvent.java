@@ -17,6 +17,7 @@ public class addingEvent extends JFrame {
 	private JPanel contentPane;
 	private JTextField titleName;
 	public addingEvent() {
+		setTitle("Event Adder");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 496, 415);
 		contentPane = new JPanel();
@@ -29,7 +30,8 @@ public class addingEvent extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Add An Event!");
-		lblNewLabel.setBounds(196, 11, 87, 14);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel.setBounds(174, 11, 120, 50);
 		panel.add(lblNewLabel);
 		
 		JLabel titleLabel = new JLabel("Title");
