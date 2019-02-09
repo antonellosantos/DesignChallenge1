@@ -223,7 +223,7 @@ public class CalendarProgram{
 		public void actionPerformed (ActionEvent e)
 				{
 			AddEvent event = new AddEvent();
-			event.setVisible(true);
+			event.setVisible(false);
 				}
 			}
 }
