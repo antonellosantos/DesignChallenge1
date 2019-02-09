@@ -21,7 +21,6 @@ public class DesignChallenge1 {
         SMSView smsApp = new SMSView();
         FBView fbApp = new FBView();
         
-        
     	String date = "2/8/2019";
 		String[] sDate = date.split("/");
 		String year = sDate[2];
