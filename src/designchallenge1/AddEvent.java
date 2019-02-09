@@ -17,11 +17,11 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-public class addingEvent extends JFrame {
+public class AddEvent extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField titleName;
-	public addingEvent() {
+	public AddEvent() {
 		setTitle("Event Adder");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 496, 415);
