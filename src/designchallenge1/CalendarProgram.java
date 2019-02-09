@@ -6,7 +6,7 @@ package designchallenge1;
 
 /**
  *
- * @author Arturo III
+ * @author Antonello Santos and Rafael Cruz 
  */
 
 import javax.swing.*;
