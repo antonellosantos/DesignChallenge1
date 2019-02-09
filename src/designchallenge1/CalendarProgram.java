@@ -115,7 +115,7 @@ public class CalendarProgram{
 		cmbYear.addActionListener(new cmbYear_Action());
 		
 		addEvent = new JButton("Add Event");
-		addEvent.setBounds(107, 619, 89, 23);
+		addEvent.setBounds(274, 619, 89, 23);
 		calendarPanel.add(addEvent);
 		modelCalendarTable.setColumnCount(7);
 		modelCalendarTable.setRowCount(6);
@@ -222,7 +222,7 @@ public class CalendarProgram{
 		{
 		public void actionPerformed (ActionEvent e)
 				{
-			AddEvent event = new AddEvent();
+			addEvent event = new addEvent();
 			event.setVisible(true);
 				}
 			}
