@@ -67,8 +67,15 @@ public class addingEvent extends JFrame {
 		yearDate.setMaximumRowCount(12);
 		yearDate.setBounds(333, 181, 110, 33);
 		panel.add(yearDate);
-		for(int year=1964;year<=2020;year++){
-	        yearDate.addItem(year);
-		}
+		
+		JLabel labelColor = new JLabel("Label");
+		labelColor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		labelColor.setBounds(27, 237, 46, 14);
+		panel.add(labelColor);
+		
+		JComboBox choosingColor = new JComboBox();
+		choosingColor.setMaximumRowCount(31);
+		choosingColor.setBounds(27, 262, 110, 33);
+		panel.add(choosingColor);
 	}
 }
