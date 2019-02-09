@@ -30,24 +30,13 @@ public class notificationAdapter implements notificationCenter{
 //		System.out.println(dDay + "/" + dMonth + "/" + dYear);
 //	}
 //	
-	@Override
-	public void getYear() {
-		
-		
-	}
 
 	@Override
-	public void getMonth() {
+	public void getDate() {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void getDay() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public void getTitle() {
 		sms.getEventName();
@@ -60,5 +49,7 @@ public class notificationAdapter implements notificationCenter{
 		sms.getColor();
 		
 	}
+
+
 	
 }
