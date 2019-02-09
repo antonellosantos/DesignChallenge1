@@ -8,9 +8,9 @@ import sms.SMSView;
 import facebook.FBView;
 
 /**
- *
- * @author Arturo III
- */
+*
+* @author Rafael Cruz and Antonello Santos 
+*/
 public class DesignChallenge1 {
 
     /**
