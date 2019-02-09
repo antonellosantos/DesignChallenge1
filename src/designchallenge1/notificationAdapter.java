@@ -8,9 +8,6 @@ public class notificationAdapter implements notificationCenter{
 	SMS sms;
 	FBView fb;
 	
-	
-	
-	
 	public notificationAdapter(SMS textPhone, FBView messageFacebook) {
 		sms = textPhone;
 		fb = messageFacebook;

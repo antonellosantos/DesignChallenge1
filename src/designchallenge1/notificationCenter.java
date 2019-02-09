@@ -1,7 +1,7 @@
 package designchallenge1;
 
 public interface notificationCenter{
-	public void getDate();
-	public void getTitle();
-	public void labelColor();
+	public abstract void getDate();
+	public abstract void getTitle();
+	public abstract void labelColor();
 }
