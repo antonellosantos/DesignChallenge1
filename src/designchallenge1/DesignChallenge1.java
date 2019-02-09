@@ -29,6 +29,8 @@ public class DesignChallenge1 {
     	int dYear = Integer.parseInt(year);
 		int dMonth = Integer.parseInt(month);
 		int dDay = Integer.parseInt(day);
+		
+	System.out.println(dDay + "/" + dMonth + "/" + dYear);
     	
        
         
