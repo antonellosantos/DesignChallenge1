@@ -5,29 +5,29 @@ import java.util.ArrayList;
 
 public class Events {
 
-	private static ArrayList<EventData> events = new ArrayList<EventData>();
+	private static ArrayList<EventData> allEvents = new ArrayList<EventData>();
 
-	public void addEvent(EventData e){
-		events.add(e);
+	public void addEvent(EventData event){
+		allEvents.add(event);
 	}
 
 	public ArrayList<EventData> getEvents(){
-		return events;
+		return allEvents;
 	}
 
 	public int getEventsSize() {
-		return events.size();
+		return allEvents.size();
 	}
 
-	public int getIndex(EventData e) {
-		return events.indexOf(e);
+	public int getIndex(EventData event) {
+		return allEvents.indexOf(event);
 	}
 
 	public void printEvents() {
-		for (int i = 0; i<events.size(); i++)
+		for (int i = 0; i<allEvents.size(); i++)
 		{
-			System.out.println(i + " " + events.get(i).geteventName() + " " + events.get(i).getColor());
-			System.out.println("ON: "+ events.get(i).getMonth()+ "/"+  events.get(i).getDay()+ "/" +events.get(i).getYear());
+			System.out.println(i + " " + allEvents.get(i).geteventName() + " " + allEvents.get(i).getColor());
+			System.out.println("ON: "+ allEvents.get(i).getMonth()+ "/"+  allEvents.get(i).getDay()+ "/" + allEvents.get(i).getYear());
 		}
 	}
 }
