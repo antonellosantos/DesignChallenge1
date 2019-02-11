@@ -73,6 +73,9 @@ public class AddEvent extends JFrame {
 		yearDate.setMaximumRowCount(12);
 		yearDate.setBounds(333, 181, 110, 33);
 		panel.add(yearDate);
+		for(int year=1;year<=12;year++){
+	        yearDate.addItem(year);
+		}
 		
 		JLabel labelColor = new JLabel("Label");
 		labelColor.setFont(new Font("Tahoma", Font.PLAIN, 15));
