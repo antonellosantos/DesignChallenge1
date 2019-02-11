@@ -10,9 +10,6 @@ public class EventData {
 		
 		setDate(month,day,year);
 		
-		eventName = "";
-		color = "Green";
-		
 	}
 	
 	

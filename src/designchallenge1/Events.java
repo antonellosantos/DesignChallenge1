@@ -23,12 +23,11 @@ public class Events {
 		return events.indexOf(e);
 	}
 
-//	public void printEvents() {
-//		for (int i = 0; i<events.size(); i++)
-//		{
-//			System.out.println(i + " " + events.get(i).geteventName() + " " + events.get(i).getColor());
-//			System.out.println("ON: "+ events.get(i).getMonth()+ "/"+  events.get(i).getDay()+ "/" +events.get(i).getYear());
-//		}
-//	}
-	
+	public void printEvents() {
+		for (int i = 0; i<events.size(); i++)
+		{
+			System.out.println(i + " " + events.get(i).geteventName() + " " + events.get(i).getColor());
+			System.out.println("ON: "+ events.get(i).getMonth()+ "/"+  events.get(i).getDay()+ "/" +events.get(i).getYear());
+		}
+	}
 }
