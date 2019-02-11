@@ -1,6 +1,6 @@
 package designchallenge1;
 
-public abstract class observerPattern {
+public abstract class ObserverPattern {
     public abstract void update();
 }
 

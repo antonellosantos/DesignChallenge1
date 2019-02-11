@@ -1,10 +1,10 @@
 package designchallenge1;
 import java.util.*;
 
-public class arrayEvent {
-	ArrayList<storingEvent> events = new ArrayList();
+public class ArrayEvent {
+	ArrayList<StoringEvent> events = new ArrayList();
 
-	public void getEvent(storingEvent e)
+	public void getEvent(StoringEvent e)
 	{
 		events.add(e);
 	}

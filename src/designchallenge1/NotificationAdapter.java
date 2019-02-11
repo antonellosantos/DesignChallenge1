@@ -3,7 +3,7 @@ import java.util.Arrays;
 import sms.SMS;
 import facebook.FBView;
 
-public class notificationAdapter implements notificationCenter{
+public class NotificationAdapter implements NotificationCenter{
 	
 	SMS sms;
 	FBView fb;
@@ -11,7 +11,7 @@ public class notificationAdapter implements notificationCenter{
 	
 	
 	
-	public notificationAdapter(SMS textPhone, FBView messageFacebook) {
+	public NotificationAdapter(SMS textPhone, FBView messageFacebook) {
 		sms = textPhone;
 		fb = messageFacebook;
 		

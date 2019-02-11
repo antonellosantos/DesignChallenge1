@@ -1,13 +1,13 @@
 package designchallenge1;
 
-public class storingEvent {
+public class StoringEvent {
 	String eventName;
 	int Day;
 	int Month;
 	int Year;
 	String Label;
 	
-	public storingEvent(String eventName, int Day, int Month, int Year, String Label) {
+	public StoringEvent(String eventName, int Day, int Month, int Year, String Label) {
 		setDate(Day, Month, Year);
 		
 		this.eventName = "";
