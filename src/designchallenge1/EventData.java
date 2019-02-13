@@ -1,4 +1,5 @@
 package designchallenge1;
+
 import java.awt.color.*;
 public class EventData {
 
