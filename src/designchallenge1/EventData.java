@@ -1,4 +1,5 @@
 package designchallenge1;
+
 import java.awt.color.*;
 public class EventData {
 
@@ -9,9 +10,6 @@ public class EventData {
 	public EventData(int month, int day, int year) {
 		
 		setDate(month,day,year);
-		
-		eventName = "";
-		color = "Green";
 		
 	}
 	
