@@ -7,6 +7,9 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import designchallenge1.CalendarProgram.btnPrev_Action;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -20,6 +23,8 @@ public class AddEvent extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField titleName;
+	JComboBox dayDate, monthDate, yearDate, labelColor;
+	
 	public AddEvent() {
 		setTitle("Event Adder");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -44,6 +49,7 @@ public class AddEvent extends JFrame {
 		panel.add(titleLabel);
 		
 		titleName = new JTextField();
+		titleName.setFont(new Font("Tahoma", Font.PLAIN, 19));
 		titleName.setBounds(27, 86, 416, 50);
 		panel.add(titleName);
 		titleName.setColumns(10);
@@ -53,7 +59,7 @@ public class AddEvent extends JFrame {
 		Date.setBounds(27, 156, 46, 14);
 		panel.add(Date);
 		
-		JComboBox dayDate = new JComboBox();
+		 dayDate = new JComboBox();
 		dayDate.setMaximumRowCount(31);
 		dayDate.setBounds(27, 181, 110, 33);
 		panel.add(dayDate);
@@ -73,6 +79,9 @@ public class AddEvent extends JFrame {
 		yearDate.setMaximumRowCount(12);
 		yearDate.setBounds(333, 181, 110, 33);
 		panel.add(yearDate);
+		for(int year=1964;year<=2022;year++){
+	        yearDate.addItem(year);
+		}
 		
 		JLabel labelColor = new JLabel("Label");
 		labelColor.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -88,8 +97,31 @@ public class AddEvent extends JFrame {
 		choosingColor.addItem("Yellow");
 		choosingColor.addItem("Blue");
 		
+		
+		
 		JButton finishButton = new JButton("Done!");
 		finishButton.setBounds(371, 332, 89, 23);
 		panel.add(finishButton);
-	}
+		
+		finishButton.addActionListener(new doneButton());
+		
+	} 
+	
+	class doneButton implements ActionListener
+	{
+	public void actionPerformed (ActionEvent event)
+		{
+//			storingEvent se = new storingEvent();
+//			se.setEventName(titleName.getText());
+			String name = titleName.getText();
+			int eventDay = Integer.parseInt(dayDate.getSelectedItem().toString());
+			int eventMonth = Integer.parseInt(monthDate.getSelectedItem().toString());
+			int eventYear = Integer.parseInt(yearDate.getSelectedItem().toString());
+			String eventColor = labelColor.getSelectedItem().toString();
+			
+			storingEvent newEvent = new storingEvent(name,eventDay,eventMonth,eventYear, eventColor);
+		}
 }
+
+	}
+		

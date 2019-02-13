@@ -24,6 +24,8 @@ public class CalendarProgram{
         /**** Swing Components ****/
         public JLabel monthLabel, yearLabel;
 	public JButton btnPrev, btnNext, addEventBtn;
+
+	
         public JComboBox cmbYear;
 	public JFrame frmMain;
 	public Container pane;
@@ -113,14 +115,12 @@ public class CalendarProgram{
 		btnPrev.addActionListener(new btnPrev_Action());
 		btnNext.addActionListener(new btnNext_Action());
 		cmbYear.addActionListener(new cmbYear_Action());
-		
-		JButton addEventBtn = new JButton("Add An Event");
-		addEventBtn.setBounds(317, 610, 133, 40);
+		 addEventBtn = new JButton("Add An Event");
+		addEventBtn.setBounds(207, 610, 133, 40);
 		calendarPanel.add(addEventBtn);
 		modelCalendarTable.setColumnCount(7);
 		modelCalendarTable.setRowCount(6);
 		addEventBtn.addActionListener(new addEvent_Action());
-		
 		pane.add(calendarPanel);
 		calendarPanel.add(monthLabel);
 		calendarPanel.add(yearLabel);
@@ -162,8 +162,8 @@ public class CalendarProgram{
 		calendarTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		calendarTable.setRowHeight(76);
-		
-		
+		modelCalendarTable.setColumnCount(7);
+		modelCalendarTable.setRowCount(6);
 		
 		for (int i = yearBound-100; i <= yearBound+100; i++)
                 {
@@ -226,5 +226,4 @@ public class CalendarProgram{
 			}
 		}
 	}
-	
 }
