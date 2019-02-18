@@ -119,7 +119,6 @@ public class AddEvent extends JFrame {
 			int eventYear = Integer.parseInt(yearDate.getSelectedItem().toString());
 			String eventColor = labelColor.getSelectedItem().toString();
 			
-			storingEvent newEvent = new storingEvent(name,eventDay,eventMonth,eventYear, eventColor);
 		}
 }
 
