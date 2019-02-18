@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Events {
 
+	
 	private static ArrayList<EventData> events = new ArrayList<EventData>();
 
 	public void addEvent(EventData e){
@@ -22,13 +23,5 @@ public class Events {
 
 	public int getIndex(EventData e) {
 		return events.indexOf(e);
-	}
-
-	public void printEvents() {
-		for (int i = 0; i<events.size(); i++)
-		{
-			System.out.println(i + " " + events.get(i).geteventName() + " " + events.get(i).getColor());
-			System.out.println("ON: "+ events.get(i).getMonth()+ "/"+  events.get(i).getDay()+ "/" +events.get(i).getYear());
-		}
 	}
 }

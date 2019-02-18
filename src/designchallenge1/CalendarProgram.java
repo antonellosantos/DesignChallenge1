@@ -22,11 +22,11 @@ public class CalendarProgram{
 	public int yearBound, monthBound, dayBound, yearToday, monthToday;
 
         /**** Swing Components ****/
-        public JLabel monthLabel, yearLabel;
-	public JButton btnPrev, btnNext, addEventBtn;
+    public JLabel monthLabel, yearLabel;
+	public JButton btnPrev, btnNext, addEventBtn,testButton;
 
-	
-        public JComboBox cmbYear;
+	Events listOfEvents; //The manual events added
+    public JComboBox cmbYear;
 	public JFrame frmMain;
 	public Container pane;
 	public JScrollPane scrollCalendarTable;
@@ -34,12 +34,14 @@ public class CalendarProgram{
         
         /**** Calendar Table Components ***/
 	public JTable calendarTable;
-        public DefaultTableModel modelCalendarTable;
+    public DefaultTableModel modelCalendarTable;
         
         public void refreshCalendar(int month, int year)
         {
 		String[] months =  {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 		int nod, som, i, j;
+		int realMonth = month + 1;
+		int realYear = year;
 			
 		btnPrev.setEnabled(true);
 		btnNext.setEnabled(true);
@@ -61,11 +63,23 @@ public class CalendarProgram{
 		nod = cal.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
 		som = cal.get(GregorianCalendar.DAY_OF_WEEK);
 		
-		for (i = 1; i <= nod; i++)
+		for (i = 1; i <= nod; i++) //i being the DAY
                 {
 			int row = new Integer((i+som-2)/7);
 			int column  =  (i+som-2)%7;
+			
 			modelCalendarTable.setValueAt(i, row, column);
+			
+			for(int x = 0; x < listOfEvents.getEventsSize();x++) {
+				if(listOfEvents.getEvents().get(x).getDay() == i && listOfEvents.getEvents().get(x).getMonth() == realMonth && 
+						listOfEvents.getEvents().get(x).getYear() == realYear) {
+					modelCalendarTable.setValueAt(listOfEvents.getEvents().get(x).geteventName(), row, column);
+				}
+				else {
+					modelCalendarTable.setValueAt(i, row, column); //This prints the PLAIN calendar values
+				}
+			}
+			
 		}
 
 		calendarTable.setDefaultRenderer(calendarTable.getColumnClass(0), new TableRenderer());
@@ -77,7 +91,9 @@ public class CalendarProgram{
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 }
 		catch (Exception e) {}
-                
+               
+		listOfEvents = new Events(); //This is the array list
+		
 		frmMain = new JFrame ("Calendar Application");
                 frmMain.setSize(660, 750);
 		pane = frmMain.getContentPane();
@@ -112,9 +128,16 @@ public class CalendarProgram{
 
 		calendarPanel.setBorder(BorderFactory.createTitledBorder("Calendar"));
 		
+		
+		testButton = new JButton("Showing");
+		testButton.setBounds(361, 619, 89, 23);
+		calendarPanel.add(testButton);
+		
+		
 		btnPrev.addActionListener(new btnPrev_Action());
 		btnNext.addActionListener(new btnNext_Action());
 		cmbYear.addActionListener(new cmbYear_Action());
+		testButton.addActionListener(new test_Action());
 		addEventBtn = new JButton("Add An Event");
 		addEventBtn.setBounds(207, 610, 133, 40);
 		calendarPanel.add(addEventBtn);
@@ -162,6 +185,7 @@ public class CalendarProgram{
 		calendarTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		calendarTable.setRowHeight(76);
+		
 		modelCalendarTable.setColumnCount(7);
 		modelCalendarTable.setRowCount(6);
 		
@@ -194,8 +218,9 @@ public class CalendarProgram{
     {
 	public void actionPerformed (ActionEvent e)
     {
-		AddEvent event = new AddEvent();
+		AddEvent event = new AddEvent(listOfEvents);
 		event.setVisible(true);
+		
 	}
 }
 	class btnNext_Action implements ActionListener
@@ -226,4 +251,18 @@ public class CalendarProgram{
 			}
 		}
 	}
+	class test_Action implements ActionListener
+    {
+	public void actionPerformed (ActionEvent e)
+            {
+		for(int count = 0; count<listOfEvents.getEventsSize();count++) {
+			System.out.println("Name Of Event: " + listOfEvents.getEvents().get(count).geteventName());
+			System.out.println("Month: " + listOfEvents.getEvents().get(count).getMonth());
+			System.out.println("Day: " + listOfEvents.getEvents().get(count).getDay());
+			System.out.println("Year: " + listOfEvents.getEvents().get(count).getYear());
+			System.out.println("Color: " + listOfEvents.getEvents().get(count).getColor());
+			System.out.println("");
+		}
+	}
+}
 }
