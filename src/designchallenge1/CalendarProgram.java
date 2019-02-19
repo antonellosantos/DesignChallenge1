@@ -90,6 +90,7 @@ public class CalendarProgram{
                
 		listOfEvents = eventList; //This is the array list
 		
+		
 		frmMain = new JFrame ("Calendar Application");
                 frmMain.setSize(660, 750);
 		pane = frmMain.getContentPane();

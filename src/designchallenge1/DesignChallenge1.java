@@ -26,6 +26,8 @@ public class DesignChallenge1 {
         ae.controllerProgram(cp);
         cp.addObserver(fba);
         cp.addObserver(smsa);
+        threadCalendar tc = new threadCalendar(e, cp);
+        tc.run();
         
     }
 }
