@@ -27,6 +27,7 @@ public class CalendarProgram{
 
 	Events listOfEvents; //The manual events added
 	AddEvent addingEvent;
+	ArrayList<ObserverPattern> observers = new ArrayList<>();
     public JComboBox cmbYear;
 	public JFrame frmMain;
 	public Container pane;
@@ -260,6 +261,16 @@ public class CalendarProgram{
 		}
 	}
 }
+	public void addObserver(ObserverPattern obs) {
+		observers.add(obs);
+	}
+	
+	public void updateObservers(EventData e) {
+		for(int i = 0 ; i < observers.size() ; i++) {
+			observers.get(i).update(e);
+		}
+	}
+	
 	public void addEvent(AddEvent addingEvent) {
 		this.addingEvent = addingEvent;
 	}
