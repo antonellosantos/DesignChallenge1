@@ -25,6 +25,7 @@ public class AddEvent extends JFrame {
 	private JTextField titleName;
 	JComboBox dayDate, monthDate, yearDate, choosingColor;
 	EventData storingEvent;
+	CalendarProgram program;
 	Events events;
 	private JLabel lblNewLabel_1;
 	private JLabel lblMonth;
@@ -32,7 +33,6 @@ public class AddEvent extends JFrame {
 	
 	public AddEvent(Events events) {
 		this.events = events;
-		
 		setTitle("Event Adder");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 496, 415);
@@ -105,6 +105,7 @@ public class AddEvent extends JFrame {
 		finishButton.setBounds(371, 332, 89, 23);
 		panel.add(finishButton);
 		
+		
 		JLabel colorLabel = new JLabel("Color");
 		colorLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		colorLabel.setBounds(27, 256, 46, 14);
@@ -140,7 +141,15 @@ public class AddEvent extends JFrame {
 			
 			storingEvent = new EventData(name, eventMonth, eventDay, eventYear, labelColor);
 			events.addEvent(storingEvent);
+			program.refreshCalendar();
+			closingWindow();
 		}
 }
+	public void closingWindow() {
+		this.setVisible(false);
+	}
+	public void controllerProgram(CalendarProgram program){
+		this.program = program;
+	}
 	}
 		

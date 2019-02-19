@@ -26,6 +26,7 @@ public class CalendarProgram{
 	public JButton btnPrev, btnNext, addEventBtn,testButton;
 
 	Events listOfEvents; //The manual events added
+	AddEvent addingEvent;
     public JComboBox cmbYear;
 	public JFrame frmMain;
 	public Container pane;
@@ -36,6 +37,10 @@ public class CalendarProgram{
 	public JTable calendarTable;
     public DefaultTableModel modelCalendarTable;
         
+    	public void refreshCalendar() {
+    		refreshCalendar(monthToday, yearToday);
+    	}
+    
         public void refreshCalendar(int month, int year)
         {
 		String[] months =  {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -64,35 +69,25 @@ public class CalendarProgram{
 		som = cal.get(GregorianCalendar.DAY_OF_WEEK);
 		
 		for (i = 1; i <= nod; i++) //i being the DAY
-                {
+        {
 			int row = new Integer((i+som-2)/7);
 			int column  =  (i+som-2)%7;
-			
-			modelCalendarTable.setValueAt(i, row, column);
-			
-			for(int x = 0; x < listOfEvents.getEventsSize();x++) {
-				if(listOfEvents.getEvents().get(x).getDay() == i && listOfEvents.getEvents().get(x).getMonth() == realMonth && 
-						listOfEvents.getEvents().get(x).getYear() == realYear) {
-					modelCalendarTable.setValueAt(listOfEvents.getEvents().get(x).geteventName(), row, column);
-				}
-				else {
-					modelCalendarTable.setValueAt(i, row, column); //This prints the PLAIN calendar values
-				}
-			}
-			
+			String txt = "";
+			txt = listOfEvents.checkEvent(realMonth, i, year);
+			modelCalendarTable.setValueAt(txt, row, column);
 		}
-
+			
 		calendarTable.setDefaultRenderer(calendarTable.getColumnClass(0), new TableRenderer());
 	}
         
-	public CalendarProgram()
+	public CalendarProgram(Events eventList)
         {
 		try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 }
 		catch (Exception e) {}
                
-		listOfEvents = new Events(); //This is the array list
+		listOfEvents = eventList; //This is the array list
 		
 		frmMain = new JFrame ("Calendar Application");
                 frmMain.setSize(660, 750);
@@ -218,8 +213,8 @@ public class CalendarProgram{
     {
 	public void actionPerformed (ActionEvent e)
     {
-		AddEvent event = new AddEvent(listOfEvents);
-		event.setVisible(true);
+
+		addingEvent.setVisible(true);
 		
 	}
 }
@@ -251,7 +246,7 @@ public class CalendarProgram{
 			}
 		}
 	}
-	class test_Action implements ActionListener
+	class test_Action implements ActionListener //This is the show button  
     {
 	public void actionPerformed (ActionEvent e)
             {
@@ -265,4 +260,7 @@ public class CalendarProgram{
 		}
 	}
 }
+	public void addEvent(AddEvent addingEvent) {
+		this.addingEvent = addingEvent;
+	}
 }
