@@ -10,6 +10,9 @@ public class SMSAdapter implements ObserverPattern{
 	SMSView smsViewing;
 	SMS sms;
 	
+	public SMSAdapter() {
+		smsViewing = new SMSView();
+	}
 
 	public void update(EventData e) {
 		String newEvent = e.geteventName();
@@ -35,6 +38,7 @@ public class SMSAdapter implements ObserverPattern{
 			c = Color.GREEN;
 		}
 		
+		smsViewing.setVisible(true);
 		sms = new SMS(newEvent, cl, c);
 		smsViewing.sendSMS(sms);
 	}

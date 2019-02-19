@@ -7,6 +7,9 @@ public class FBAdapter implements ObserverPattern{
 
 	FBView fb;
 //	ArrayList fbArray = new ArrayList();
+	public FBAdapter() {
+		fb = new FBView();
+	}
 	
 	public void update(EventData e) {
 		String newEvent = e.geteventName();
@@ -30,9 +33,7 @@ public class FBAdapter implements ObserverPattern{
 			c = Color.GREEN;
 		}
 		
-		
-		
-		
+		fb.setVisible(true);
 		fb.showNewEvent(newEvent, month, day, year, c);
 	}
 
