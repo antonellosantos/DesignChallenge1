@@ -69,13 +69,14 @@ public class CalendarProgram{
 		nod = cal.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
 		som = cal.get(GregorianCalendar.DAY_OF_WEEK);
 		
+		JTextArea area = new JTextArea();
+		
 		for (i = 1; i <= nod; i++) //i being the DAY
         {
 			int row = new Integer((i+som-2)/7);
 			int column  =  (i+som-2)%7;
 			String txt = "";
 			txt = listOfEvents.checkEvent(realMonth, i, year);
-			modelCalendarTable.setValueAt(txt, row, column);
 		}
 			
 		calendarTable.setDefaultRenderer(calendarTable.getColumnClass(0), new TableRenderer());
