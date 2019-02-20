@@ -20,18 +20,24 @@ public class threadCalendar implements Runnable{
 	
     
     
-	String repeat = "hello";
 	int time;
 	GregorianCalendar gregorianCalendar = new GregorianCalendar();            
 	String month=String.valueOf(gregorianCalendar.get(GregorianCalendar.MONTH) + 1);            
 	String day=String.valueOf(gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH));
 	String year=String.valueOf(gregorianCalendar.get(GregorianCalendar.YEAR));
+	int monthInteger = Integer.parseInt(month);
+	int yearInteger = Integer.parseInt(year);
+	int dayInteger = Integer.parseInt(day);
 	
 	public void run() {
 		try {
 			while(true) {
 				for(int x=0;x<e.getEventsSize();x++) {
 					System.out.println(e.getEvents().get(x).geteventName());
+					if(e.getEvents().get(x).getDay() == dayInteger && e.getEvents().get(x).getMonth() == monthInteger
+							&& e.getEvents().get(x).getYear() == yearInteger) {
+						
+					}
 				}
 				Calendar c = new GregorianCalendar();
 				Thread.sleep(1500);
