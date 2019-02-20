@@ -27,7 +27,6 @@ public class DesignChallenge1 {
         cp.addObserver(fba);
         cp.addObserver(smsa);
         threadCalendar tc = new threadCalendar(e, cp);
-        tc.run();
-        
+        tc.run();        
     }
 }
