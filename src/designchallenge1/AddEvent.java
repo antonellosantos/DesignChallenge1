@@ -15,6 +15,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.GregorianCalendar;
+
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -30,6 +32,7 @@ public class AddEvent extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblMonth;
 	private JLabel lblYear;
+	GregorianCalendar gregorianCalendar = new GregorianCalendar();   
 	
 	public AddEvent(Events events) {
 		this.events = events;
@@ -73,6 +76,7 @@ public class AddEvent extends JFrame {
 		for(int day=1;day<=31;day++){
 	        dayDate.addItem(day);
 		}
+		dayDate.setSelectedItem(gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH));  
 		
 		monthDate = new JComboBox();
 		monthDate.setMaximumRowCount(12);
@@ -81,6 +85,7 @@ public class AddEvent extends JFrame {
 		for(int month=1;month<=12;month++){
 	        monthDate.addItem(month);
 		}
+		monthDate.setSelectedItem(gregorianCalendar.get(GregorianCalendar.MONTH) + 1);  
 		
 		yearDate = new JComboBox();
 		yearDate.setMaximumRowCount(12);
@@ -89,6 +94,7 @@ public class AddEvent extends JFrame {
 		for(int year=1964;year<=2022;year++){
 	        yearDate.addItem(year);
 		}
+		yearDate.setSelectedItem(gregorianCalendar.get(GregorianCalendar.YEAR));  
 		
 		choosingColor = new JComboBox();
 		choosingColor.setMaximumRowCount(31);
@@ -141,6 +147,8 @@ public class AddEvent extends JFrame {
 			
 			storingEvent = new EventData(name, eventMonth, eventDay, eventYear, labelColor);
 			events.addEvent(storingEvent);
+			events.addNotification(storingEvent);
+			
 			program.refreshCalendar();
 			closingWindow();
 		}
@@ -150,6 +158,6 @@ public class AddEvent extends JFrame {
 	}
 	public void controllerProgram(CalendarProgram program){
 		this.program = program;
-	}
+		}
 	}
 		

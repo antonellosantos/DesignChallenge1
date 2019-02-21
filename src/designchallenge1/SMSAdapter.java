@@ -23,7 +23,7 @@ public class SMSAdapter implements ObserverPattern{
 		String eventColor = e.getColor();
 		Calendar cl;
 		
-		cl = new GregorianCalendar(year,month,day);
+		cl = new GregorianCalendar(year,month - 1,day);
 		
 		if(eventColor == "Red") {
 			c = Color.RED;
@@ -42,5 +42,6 @@ public class SMSAdapter implements ObserverPattern{
 		sms = new SMS(newEvent, cl, c);
 		smsViewing.sendSMS(sms);
 	}
+
 	
 }

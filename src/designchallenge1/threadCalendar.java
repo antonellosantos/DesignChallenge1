@@ -28,28 +28,35 @@ public class threadCalendar implements Runnable{
 		try {
 			while(true) {
 				GregorianCalendar gregorianCalendar = new GregorianCalendar();            
-				String month=String.valueOf(gregorianCalendar.get(GregorianCalendar.MONTH) + 1);            
-				String day=String.valueOf(gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH));
-				String year=String.valueOf(gregorianCalendar.get(GregorianCalendar.YEAR));
+				String month = String.valueOf(gregorianCalendar.get(GregorianCalendar.MONTH) + 1);            
+				String day = String.valueOf(gregorianCalendar.get(GregorianCalendar.DAY_OF_MONTH));
+				String year = String.valueOf(gregorianCalendar.get(GregorianCalendar.YEAR));
 				int monthInteger = Integer.parseInt(month);
 				int yearInteger = Integer.parseInt(year);
 				int dayInteger = Integer.parseInt(day);
-				for(int x=0;x<e.getEventsSize();x++) {
-					System.out.println(e.getEvents().get(x).geteventName());
-					if(e.getEvents().get(x).getDay() == dayInteger && e.getEvents().get(x).getMonth() == monthInteger
-							&& e.getEvents().get(x).getYear() == yearInteger) {
+				
+				
+				for(int x=0;x<e.getEventNotificationSize();x++) {
+					System.out.println(e.getNotifiedEvents().get(x).geteventName());
+					if(e.getNotifiedEvents().get(x).getDay() == dayInteger && e.getNotifiedEvents().get(x).getMonth() == monthInteger
+							&& e.getNotifiedEvents().get(x).getYear() == yearInteger) {
 						System.out.println("Testing complete");
-						cp.updateObservers(e.getEvents().get(x));
+						cp.updateObservers(e.getNotifiedEvents().get(x));
+						e.removeNotifiedEvents(e.getNotifiedEvents().get(x));
 					}
 					else {
 						System.out.println("Testing has failed");
 					}
 				}
+				
+				
 				GregorianCalendar refreshing = new GregorianCalendar();
 				Calendar c = new GregorianCalendar();
 				Thread.sleep(3000);
 			}
-		} catch(Exception e) {};
+		} catch(Exception e) {
+			e.printStackTrace();
+		};
 	}
 	
 
