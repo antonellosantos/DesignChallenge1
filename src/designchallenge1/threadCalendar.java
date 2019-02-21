@@ -38,12 +38,8 @@ public class threadCalendar implements Runnable{
 					System.out.println(e.getNotifiedEvents().get(x).geteventName());
 					if(e.getNotifiedEvents().get(x).getDay() == dayInteger && e.getNotifiedEvents().get(x).getMonth() == monthInteger
 							&& e.getNotifiedEvents().get(x).getYear() == yearInteger) {
-						System.out.println("Testing complete");
 						cp.updateObservers(e.getNotifiedEvents().get(x));
 						e.removeNotifiedEvents(e.getNotifiedEvents().get(x));
-					}
-					else {
-						System.out.println("Testing has failed");
 					}
 				}
 				
