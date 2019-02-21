@@ -1,4 +1,3 @@
-	
 package designchallenge1;
 
 
@@ -23,7 +22,7 @@ public class FileParserCSV extends FileParser{
 				linesinFile.add(LineinFile);
 				currentLine = bufferedreader.readLine();
 				
-			}
+			}  	
 			
 			file = new File("src\\Sample Files\\UserEvents.csv");
 			filereader = new FileReader(file);

@@ -7,19 +7,14 @@ public class EventData {
 	private String eventName;
 	private String color;
 	
-	public EventData(int month, int day, int year) {
-		
-		setDate(month,day,year);
-		
-	}
-	
-	
-	public void setDate(int month, int day, int year) {
+	public EventData(String name, int month, int day, int year, String label) {
 		this.month = month;
 		this.day = day;
 		this.year = year;
-		
+		this.eventName = name;
+		this.color = label;
 	}
+	
 	public int getDay() {
 		return day;
 	}
