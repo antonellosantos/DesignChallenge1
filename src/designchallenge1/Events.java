@@ -42,23 +42,25 @@ public class Events {
 	}
 
 	public String checkEvent(int month, int day, int year) {
+		String eventDay = "<html>"+Integer.toString(day)+"<br>";
 		for(int x = 0 ; x < getEventsSize() ; x++) {
 			if(events.get(x).getDay() == day && events.get(x).getMonth() == month && events.get(x).getYear() == year) {
 				if(events.get(x).getColor() == "Red") {
-					return ("<html><font color=\"red\">" + events.get(x).geteventName() + "</font></html>");
+					eventDay += "<font color=\"red\">" + events.get(x).geteventName() + "</font><br>";
 				}
 				else if(events.get(x).getColor() == "Green") {
-					return ("<html><font color=\"green\">" + events.get(x).geteventName() + "</font></html>");
+					eventDay += "<font color=\"green\">" + events.get(x).geteventName() + "</font><br>";
 				}
 				else if(events.get(x).getColor() == "Blue") {
-					return ("<html><font color=\"blue\">" + events.get(x).geteventName() + "</font></html>");
+					eventDay += "<font color=\"blue\">" + events.get(x).geteventName() + "</font><br>";
 				}
 				else if(events.get(x).getColor() == "Yellow") {
-					return ("<html><font color=\"yellow\">" + events.get(x).geteventName() + "</font></html>");
+					eventDay += "<font color=\"yellow\">" + events.get(x).geteventName() + "</font><br>";
 				}
 			}
 		}
-		return Integer.toString(day);
+		eventDay += "</html>";
+		return eventDay;
 	}
 	
 	public void removeNotifiedEvents(EventData e) {

@@ -273,7 +273,6 @@ public class CalendarProgram{
 	public void updateObservers(EventData e) {
 		for(int i = 0 ; i < observers.size() ; i++) {
 				observers.get(i).update(e);
-				
 		}
 	}
 	
