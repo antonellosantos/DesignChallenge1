@@ -1,4 +1,5 @@
 package designchallenge1;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -16,7 +17,16 @@ public class DesignChallenge1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        CalendarProgram cp = new CalendarProgram();
-        
+    	Events e = new Events();
+    	AddEvent ae = new AddEvent(e);
+        CalendarProgram cp = new CalendarProgram(e);
+        FBAdapter fba = new FBAdapter();
+        SMSAdapter smsa = new SMSAdapter();
+        cp.addEvent(ae);
+        ae.controllerProgram(cp);
+        cp.addObserver(fba);
+        cp.addObserver(smsa);
+        threadCalendar tc = new threadCalendar(e, cp);
+        tc.run();        
     }
 }
