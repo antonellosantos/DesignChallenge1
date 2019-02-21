@@ -77,6 +77,8 @@ public class CalendarProgram{
 			int column  =  (i+som-2)%7;
 			String txt = "";
 			txt = listOfEvents.checkEvent(realMonth, i, year);
+			modelCalendarTable.setValueAt(txt, row, column);
+			
 		}
 			
 		calendarTable.setDefaultRenderer(calendarTable.getColumnClass(0), new TableRenderer());
