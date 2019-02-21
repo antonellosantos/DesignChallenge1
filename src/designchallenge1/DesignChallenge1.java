@@ -26,7 +26,16 @@ public class DesignChallenge1 {
         ae.controllerProgram(cp);
         cp.addObserver(fba);
         cp.addObserver(smsa);
+        FileParserCSV fpc = new FileParserCSV(e);        
+        fpc.readFile();
+        
+        
         threadCalendar tc = new threadCalendar(e, cp);
-        tc.run();        
+        tc.run();   
+        
+        
+        
+        
+        
     }
 }
