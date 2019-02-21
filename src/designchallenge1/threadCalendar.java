@@ -7,8 +7,6 @@ public class threadCalendar implements Runnable{
 	public threadCalendar(Events e, CalendarProgram cp) {
 		this.e = e;
 		this.cp = cp;
-		
-		
 	}
 	
 	Events e;

@@ -19,17 +19,16 @@ public class FBAdapter implements ObserverPattern{
 		Color c = null;
 		String eventColor = e.getColor();
 		
-		if(eventColor.toLowerCase() == "red") {
+		if(eventColor.toLowerCase().equals("red")) {
 			c = Color.RED;
-			
 		}
-		else if(eventColor.toLowerCase() == "yellow") {
+		else if(eventColor.toLowerCase().equals("yellow")) {
 			c = Color.YELLOW;
 		}
-		else if(eventColor.toLowerCase() == "blue") {
+		else if(eventColor.toLowerCase().equals("blue")) {
 			c = Color.BLUE;
 		}
-		else if(eventColor.toLowerCase() == "green") {
+		else if(eventColor.toLowerCase().equals("green")) {
 			c = Color.GREEN;
 		}
 		

@@ -45,16 +45,16 @@ public class Events {
 		String eventDay = "<html>"+Integer.toString(day)+"<br>";
 		for(int x = 0 ; x < getEventsSize() ; x++) {
 			if(events.get(x).getDay() == day && events.get(x).getMonth() == month && events.get(x).getYear() == year) {
-				if(events.get(x).getColor() == "Red") {
+				if(events.get(x).getColor().toLowerCase().equals("red")) {
 					eventDay += "<font color=\"red\">" + events.get(x).geteventName() + "</font><br>";
 				}
-				else if(events.get(x).getColor() == "Green") {
+				else if(events.get(x).getColor().toLowerCase().equals("green")) {
 					eventDay += "<font color=\"green\">" + events.get(x).geteventName() + "</font><br>";
 				}
-				else if(events.get(x).getColor() == "Blue") {
+				else if(events.get(x).getColor().toLowerCase().equals("blue")) {
 					eventDay += "<font color=\"blue\">" + events.get(x).geteventName() + "</font><br>";
 				}
-				else if(events.get(x).getColor() == "Yellow") {
+				else if(events.get(x).getColor().toLowerCase().equals("yellow")) {
 					eventDay += "<font color=\"yellow\">" + events.get(x).geteventName() + "</font><br>";
 				}
 			}

@@ -131,8 +131,6 @@ public class AddEvent extends JFrame {
 		
 		finishButton.addActionListener(new doneButton());
 		
-		
-		
 	} 
 	
 	class doneButton implements ActionListener

@@ -79,7 +79,6 @@ public class CalendarProgram{
 			String txt = "";
 			txt = listOfEvents.checkEvent(realMonth, i, year);
 			modelCalendarTable.setValueAt(txt, row, column);
-			
 		}
 			
 		calendarTable.setDefaultRenderer(calendarTable.getColumnClass(0), new TableRenderer());
