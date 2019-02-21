@@ -13,7 +13,7 @@ public class SMS {
 		this.date = date;
 		this.color = color;
 	}
-	
+
 	public String getEventName() {
 		return eventName;
 	}

@@ -23,16 +23,9 @@ public class AddEvent extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField titleName;
-	JComboBox dayDate, monthDate, yearDate, choosingColor;
-	EventData storingEvent;
-	CalendarProgram program;
-	Events events;
-	private JLabel lblNewLabel_1;
-	private JLabel lblMonth;
-	private JLabel lblYear;
+	JComboBox dayDate, monthDate, yearDate, labelColor;
 	
-	public AddEvent(Events events) {
-		this.events = events;
+	public AddEvent() {
 		setTitle("Event Adder");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 496, 415);
@@ -66,33 +59,38 @@ public class AddEvent extends JFrame {
 		Date.setBounds(27, 156, 46, 14);
 		panel.add(Date);
 		
-		dayDate = new JComboBox();
+		 dayDate = new JComboBox();
 		dayDate.setMaximumRowCount(31);
-		dayDate.setBounds(27, 201, 110, 33);
+		dayDate.setBounds(27, 181, 110, 33);
 		panel.add(dayDate);
 		for(int day=1;day<=31;day++){
 	        dayDate.addItem(day);
 		}
 		
-		monthDate = new JComboBox();
+		JComboBox monthDate = new JComboBox();
 		monthDate.setMaximumRowCount(12);
-		monthDate.setBounds(184, 201, 110, 33);
+		monthDate.setBounds(184, 181, 110, 33);
 		panel.add(monthDate);
 		for(int month=1;month<=12;month++){
 	        monthDate.addItem(month);
 		}
 		
-		yearDate = new JComboBox();
+		JComboBox yearDate = new JComboBox();
 		yearDate.setMaximumRowCount(12);
-		yearDate.setBounds(333, 201, 110, 33);
+		yearDate.setBounds(333, 181, 110, 33);
 		panel.add(yearDate);
 		for(int year=1964;year<=2022;year++){
 	        yearDate.addItem(year);
 		}
 		
-		choosingColor = new JComboBox();
+		JLabel labelColor = new JLabel("Label");
+		labelColor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		labelColor.setBounds(27, 237, 46, 14);
+		panel.add(labelColor);
+		
+		JComboBox choosingColor = new JComboBox();
 		choosingColor.setMaximumRowCount(31);
-		choosingColor.setBounds(27, 283, 110, 33);
+		choosingColor.setBounds(27, 262, 110, 33);
 		panel.add(choosingColor);
 		choosingColor.addItem("Red");
 		choosingColor.addItem("Green");
@@ -105,27 +103,7 @@ public class AddEvent extends JFrame {
 		finishButton.setBounds(371, 332, 89, 23);
 		panel.add(finishButton);
 		
-		
-		JLabel colorLabel = new JLabel("Color");
-		colorLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		colorLabel.setBounds(27, 256, 46, 14);
-		panel.add(colorLabel);
-		
-		lblNewLabel_1 = new JLabel("Day");
-		lblNewLabel_1.setBounds(27, 181, 46, 14);
-		panel.add(lblNewLabel_1);
-		
-		lblMonth = new JLabel("Month");
-		lblMonth.setBounds(184, 181, 46, 14);
-		panel.add(lblMonth);
-		
-		lblYear = new JLabel("Year");
-		lblYear.setBounds(333, 181, 46, 14);
-		panel.add(lblYear);
-		
 		finishButton.addActionListener(new doneButton());
-		
-		
 		
 	} 
 	
@@ -133,24 +111,17 @@ public class AddEvent extends JFrame {
 	{
 	public void actionPerformed (ActionEvent event)
 		{
+//			storingEvent se = new storingEvent();
+//			se.setEventName(titleName.getText());
 			String name = titleName.getText();
 			int eventDay = Integer.parseInt(dayDate.getSelectedItem().toString());
 			int eventMonth = Integer.parseInt(monthDate.getSelectedItem().toString());
 			int eventYear = Integer.parseInt(yearDate.getSelectedItem().toString());
-			String labelColor = choosingColor.getSelectedItem().toString();
+			String eventColor = labelColor.getSelectedItem().toString();
 			
-			storingEvent = new EventData(name, eventMonth, eventDay, eventYear, labelColor);
-			events.addEvent(storingEvent);
-			program.refreshCalendar();
-			closingWindow();
-
+			StoringEvent newEvent = new StoringEvent(name,eventDay,eventMonth,eventYear, eventColor);
 		}
 }
-	public void closingWindow() {
-		this.setVisible(false);
-	}
-	public void controllerProgram(CalendarProgram program){
-		this.program = program;
-	}
+
 	}
 		
