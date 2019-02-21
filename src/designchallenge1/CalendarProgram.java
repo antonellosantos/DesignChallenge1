@@ -33,6 +33,8 @@ public class CalendarProgram{
 	public Container pane;
 	public JScrollPane scrollCalendarTable;
 	public JPanel calendarPanel;
+	ArrayList<Events> notifiedEvents = new ArrayList<>();
+
         
         /**** Calendar Table Components ***/
 	public JTable calendarTable;
@@ -271,7 +273,8 @@ public class CalendarProgram{
 	
 	public void updateObservers(EventData e) {
 		for(int i = 0 ; i < observers.size() ; i++) {
-			observers.get(i).update(e);
+				observers.get(i).update(e);
+				
 		}
 	}
 	

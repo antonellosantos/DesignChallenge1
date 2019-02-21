@@ -23,7 +23,7 @@ public class Events {
 	public int getIndex(EventData e) {
 		return events.indexOf(e);
 	}
-	
+
 	public String checkEvent(int month, int day, int year) {
 		for(int x = 0 ; x < getEventsSize() ; x++) {
 			if(events.get(x).getDay() == day && events.get(x).getMonth() == month && events.get(x).getYear() == year) {
